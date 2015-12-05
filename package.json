@@ -1,16 +1,21 @@
 {
-	"name": "NodejsStarterApp",
-	"version": "0.0.1",
-	"description": "A sample nodejs app for Bluemix",
-	"scripts": {
-		"start": "node app.js"
-	},
-	"dependencies": {
-		"express": "4.12.x",
-		"cfenv": "1.0.x"
-	},
-	"repository": {},
-	"engines": {
-		"node": "0.12.x"
-	} 
+  "name": "retoBluemix",
+  "version": "1.0.0",
+  "description": "retoBluemix",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js",
+    "test": "./node_modules/karma/bin/karma start"
+  },
+  "dependencies": {
+    "cfenv": "1.0.x",
+    "express": "^4.13.3"
+  },
+  "repository": {},
+  "devDependencies": {
+    "jasmine": "^2.4.1",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6"
+  }
 }

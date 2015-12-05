@@ -1,0 +1,26 @@
+{
+  "name": "retoBluemix",
+  "description": "retoBluemix",
+  "homepage": "",
+  "license": "MIT",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "angular-animate": "~1.3.4",
+    "angular-cookies": "~1.3.4",
+    "angular-touch": "~1.3.4",
+    "angular-sanitize": "~1.3.4",
+    "angular-ui-router": "~0.2.13",
+    "angular-material": "0.10.0",
+    "angular": "1.3.15",
+    "angular-nvd3": "1.0.0-rc.2",
+    "bootstrap": "~3.3.6",
+    "components-font-awesome": "~4.5.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.3.4"
+  },
+  "resolutions": {
+    "angular": "~1.3.4"
+  }
+}

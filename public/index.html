@@ -1,27 +1,86 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html class="no-js" ng-app="retoBluemix">
   <head>
-    <title>NodeJS Starter Application</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>retoBluemix</title>
+
+    <script src="bin/angular/angular.min.js"></script>
+    <link href="bin/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bin/components-font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="style/stylesheet.css" rel="stylesheet">
+    <script src="app/app.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="stylesheets/style.css">
+
+
   </head>
+  <body ng-controller="MainController">
 
-  <body>
-    <table>
-      <tr>
-        <td style= "width:30%;">
-          <img class = "newappIcon" src="images/newapp-icon.png">
-        <td>
-            <h1>Hi there!</h1>
-          <p>Thanks for creating a
-            <span class = "blue">NodeJS Starter Application</span>.
-            Get started by reading our
-            <a href = "https://www.ng.bluemix.net/docs/#starters/nodejs/index.html#nodejs">documentation</a>
-            or use the Start Coding guide under your app in your dashboard.
-    </table>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">RetoBluemix</a>
+        </div>
+        <!-- menu items -->
+        <div class="collapse navbar-collapse" id="navbar1">
+            <!-- social media icons -->
+            <ul class="nav navbar-nav navbar-right social">
+                <li><a href="https://github.com/koletzilla"><i class="fa fa-lg fa-github"></i></a></li>
+                <li><a href="https://twitter.com/koletzilla"><i class="fa fa-lg fa-twitter"></i></a></li>
+                <li><a href="https://plus.google.com/111341997595718277867"><i class="fa fa-lg fa-google-plus"></i></a></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Begin page content -->
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Ejercicios del reto IBM Bluemix en la Codemotion 2015</h1>
+      </div>
+        <div class="row">
+        <div class="col-md-4">
+          <h3>Ejercicio factorial</h3>
+          <textarea class="form-control" placeholder="Numeros para calcular el factorial" rows="3" type="text" ng-model="factorial"> </textarea>
+          <button class="bot btn btn-primary" ng-click="calcularFac()">calcularFactorial </button>
+          <p> Resutado Factorial: </p>
+          <p> {{resFac}} </p>
+        </div>
+
+        <div class="col-md-4">
+          <h3>Ejercicio Monedas</h3>
+          <textarea class="form-control" placeholder="Lista de monedas y el total" rows="3" type="text" ng-model="monedas"> </textarea>
+          <button class="bot btn btn-primary" ng-click="calcularMon()">calcularMonedas </button>
+          <p> Resutado Monedas: </p>
+          <p> {{resMon}} </p>
+        </div>
+
+        <div class="col-md-4">
+          <h3>Ejercicio Ecuacuines</h3>
+          <textarea class="form-control" placeholder="Las dos ecuaciones" rows="3" type="text" ng-model="ecuaciones"> </textarea>
+          <button class="bot btn btn-primary" ng-click="calcularEc()">calcularEcuacion </button>
+          <p> Resutado Ecuación: </p>
+          <p> {{resEc}} </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">RetoBluemix</p>
+      </div>
+    </footer>
+
+    <script src="bin/jquery/dist/jquery.min.js"></script>
+    <script src="bin/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
-
 </html>
