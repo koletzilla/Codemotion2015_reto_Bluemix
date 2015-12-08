@@ -8,10 +8,8 @@
     "test": "node_modules/karma/bin/karma start my.conf.js --single-run",
     "postinstall": "./node_modules/bower/bin/bower install"
   },
-  }
-    "engines" : {
-      "node" : "^4.2.X"
-    }
+  "engines" : {
+    "node" : "^4.2.X"
   },
   "dependencies": {
     "bower": "^1.7.0",
