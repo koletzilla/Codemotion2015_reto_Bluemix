@@ -8,8 +8,12 @@
     "test": "node_modules/karma/bin/karma start my.conf.js --single-run"
   },
   "dependencies": {
+    "bower": "^1.7.0",
     "cfenv": "1.0.x",
     "express": "^4.13.3"
+  },
+  "scripts":{
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "repository": {},
   "devDependencies": {
