@@ -1,38 +1,77 @@
+///////////////////////////////////////////////////////////////////////
+//////////////////////////// FACTORIAL ////////////////////////////////
+///////////////////////////////////////////////////////////////////////
 
-describe("Testear Factorial", function() {
-
+describe("El Factorial (calcularFac) ", function() {
   // Test para datos correctos
-  it("Calculo de un numero", function() {
+  it("calcula de un numero", function() {
     expect(calcularFac("5\n#")).toBe('120\n');
   });
 
-  it("Calculo de un numero y linea vacia", function() {
-    expect(calcularFac("5\n\n#")).toBe('120\n');
+  it("calcula de un numero y linea vacia", function() {
+    expect(calcularFac("5\n\n#\n")).toBe('120\n');
   });
 
-  it("Calculo de varios números", function() {
-    expect(calcularFac("5\n3\n4\n#")).toBe('120\n6\n24\n');
+  it("calcula de varios números", function() {
+    expect(calcularFac("5\n3\n4\n#\n")).toBe('120\n6\n24\n');
   });
 
-
+  it("solo calcula números entre 1 y 15", function() {
+    expect(function(){calcularFac("5\n16\n4\n#")}).toThrow();
+    expect(function(){calcularFac("5\n11\n4\n#")}).not.toThrow();
+    expect(function(){calcularFac("5\n1\n0\n#")}).toThrow();
+  });
 
   // Test para errores
-  it("Lanza error si lista vacia", function() {
+  it("lanza error si lista vacia", function() {
     expect(function(){calcularFac("")}).toThrow();
   });
 
-  it("Lanza error si solo hay una almohadilla (vacia igualmente)", function() {
+  it("lanza error si solo hay una almohadilla (vacia igualmente)", function() {
     expect(function(){calcularFac("#")}).toThrow();
   });
 
-  it("Lanza error si no finaliza con una almohadilla)", function() {
+  it("lanza error si no finaliza con una almohadilla)", function() {
     expect(function(){calcularFac("2\n3")}).toThrow();
+    expect(function(){calcularFac("2\n3\n")}).toThrow();
   });
 
-  it("Lanza error si encuentra algún valor que no es un número", function() {
+  it("lanza error si encuentra algún valor que no es un número", function() {
     expect(function(){calcularFac("1\na\n3\n#")}).toThrow();
   });
+});
 
+///////////////////////////////////////////////////////////////////////
+////////////////////////////// CAMBIO /////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+describe("El método del cambio (calcularMon) ", function() {
+  // Test para datos correctos
+  it("calcula una línea", function(){
+    expect(calcularMon("100,50,20,10,5,2,:57\n#")).toBe("50x1, 5x1, 2x1\n");
+    expect(calcularMon("100,10,50,20,5,2, 1:36 \n#")).toBe("20x1, 10x1, 5x1, 1x1\n");
+  });
+
+  it("calcula varias líneas", function(){
+    expect(calcularMon("100,50,20,10,5,2,:57\n 100,10,50,20,5,2, 1:36\n#")).toBe("50x1, 5x1, 2x1\n20x1, 10x1, 5x1, 1x1\n");
+  });
+
+  // Test para errores
+  it("lanza error si el texto está vacio", function() {
+    expect(function(){calcularFac("")}).toThrow();
+  });
+
+  it("lanza error si solo hay una almohadilla (vacia igualmente)", function() {
+    expect(function(){calcularFac("#")}).toThrow();
+  });
+
+  it("lanza error si no acaba con una almohadilla", function(){
+    expect(function(){calcularMon("100,50,20,10,5,2,:57\n")}).toThrow();
+  });
+
+  it("lanza error si hay algo que no es un número", function(){
+    expect(function(){calcularMon("100,50,a,10,5,2,:57\n")}).toThrow();
+  });
 
 });
 

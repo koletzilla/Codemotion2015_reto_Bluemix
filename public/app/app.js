@@ -3,27 +3,22 @@ var app = angular.module('retoBluemix', []);
 app.controller('MainController', ['$scope', 'CalculosService',function($scope,CalculosService) {
 
   $scope.calcularFac = function (){
-
     try {
       var Resultado = CalculosService.calcularFac($scope.factorial);
       $scope.resFac = Resultado
     } catch (e) {
       //alert(e.name + ': ' + e.message);
-      $scope.resFac = "Error en la entrada de texto"
+      $scope.resFac = e.name+ ": " + e.message;
     }
-
-    /*
-    var Resultado = CalculosService.calcularFac($scope.factorial);
-    if(Resultado.error){
-      $scope.resFac = "Error en la entrada de texto"
-    }else{
-      $scope.resFac = Resultado.valor
-    }
-    */
   }
 
   $scope.calcularMon = function (){
-    $scope.resMon = CalculosService.calcularMon($scope.monedas);
+    try {
+      var Resultado = CalculosService.calcularMon($scope.monedas);
+      $scope.resMon = Resultado
+    } catch (e) {
+      $scope.resMon = e.name+ ": " + e.message;
+    }
   }
 
     $scope.calcularEc = function (){
