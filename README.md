@@ -12,7 +12,7 @@ El post original con la información lo tenéis en [el blog de la Codemotion](ht
 
 Realmente el reto inicial no daba para mucho, al final eran 3 ejercicios que ya había realizado en otro momento (salvo el de las ecuaciones, cuyo cálculo al final me trajo un poco de cabeza, menos mal que conté con algo de ayuda :P), pero he querido aprovecharlo, darle una vuelta más y aprender todo lo que pudiera por el camino.
 
-Le he dedicado bastante tiempo a este proyecto de lo que realmente merecía (Leer sobre [karma](http://karma-runner.github.io), [jasmine](http://jasmine.github.io), [testing en AngularJS](https://docs.angularjs.org/guide/unit-testing),  [Yeoman](http://yeoman.io), [Bluemix](http://www.ibm.com/cloud-computing/bluemix/), algo de [nodejs](https://nodejs.org/en/), [express](http://expressjs.com/), [bower](http://bower.io), [travis CI](https://travis-ci.org) ..). No todas las herramientas aparecen reflejadas en la implementación. Algunas las he leido con más profundidad, otras las he intentado usar sin lograr que funcionaran, pero con algunas si que he tirado adelante y estoy contento con el resultado.
+Le he dedicado bastante tiempo a este proyecto de lo que realmente merecía (Leer sobre [karma](http://karma-runner.github.io), [jasmine](http://jasmine.github.io), [testing en AngularJS](https://docs.angularjs.org/guide/unit-testing),  [Yeoman](http://yeoman.io), [Bluemix](http://www.ibm.com/cloud-computing/bluemix/), algo de [nodejs](https://nodejs.org/en/), [express](http://expressjs.com/), [bower](http://bower.io), [travis CI](https://travis-ci.org) ..). No todas las herramientas aparecen reflejadas en la implementación. Algunas las he leido con más profundidad, otras las he intentado usar sin lograr que funcionaran, pero con algunas sí que he tirado adelante y estoy contento con el resultado.
 
 ##### Sobre la implementación
 
@@ -21,16 +21,16 @@ Como debía de poder ejecutarse desde *Bluemix*, he implementado un servidor web
 
 ##### Algunas de las cosas que he conseguido:
 
-- He repasado conceptos en general relacionados con la programación web (un poquito de Bootstrap por aquí, algunos conceptos de javascript..)
+- He repasado conceptos en general relacionados con la programación web (un poquito de Bootstrap por aquí, algunos conceptos de javascript por allí..)
 - He usado Karma con Jasmine para hacer test unitarios/de integración sobre Javascript.
 - He practicado la refactorización del código inicial (principalmente el del controller) a través de "TDD" (lo básico, en este caso crear test, ver que fallaba, refactorizar y vuelta a empezar).
-- He conocido otra plataforma de tipo de PaaS (hasta ahora solo había tenido "experiencia" con Heroku).
+- He conocido otra plataforma de tipo PaaS (hasta ahora solo había tenido "experiencia" con Heroku).
 - Y sobre todo, he leido y machacado herramientas que hasta ahora solo sabía que existían, algunas las he usado y otras no, pero espero poder usarlas todas más adelante.
 
 #####  Cosas que se me han quedado en el tintero, para la próxima:
 
 - No he conseguido poder hacer testing sobre AngularJS, he tenido que sacar los métodos fuera del Service para poder testearlos, no creo que sea la forma más correcta.
-- He leido algo sobre los test End to End, para la próxima espero poder implementar algunos.
+- He leído algo sobre los test End to End, para la próxima espero poder implementar algunos.
 - He tenido problemas para poder configurar bien [generator-angular](https://github.com/yeoman/generator-angular), sospecho que algo a tenido que ver con que en un principio estaba usando la versión 5.1.1 de *NodeJS* y que alguna dependecia no lo soportaba (como *Karma* por ejemplo, que en la versión que uso lo máximo que soporta es la 4.X de *node*).
 - No he acabado muy contento con la refactorización de los métodos. El control de errores y sacar los datos de los strings han añadido más líneas de lo que me esperaba.
 
@@ -38,8 +38,8 @@ Como debía de poder ejecutarse desde *Bluemix*, he implementado un servidor web
 
 
 
- - los métodos si devuelven cada resultado en cada línea, pero al mostrarse en el navegador, todo aparece en una sola línea.
- - Los métodos devuelven un string con con el resultado, pero quizás deberían devolver alguna estructura y dejar la presentación para otro que tenga esa responsabilidad.
+ - Los métodos devuelven cada resultado en cada línea, pero al mostrarse en el navegador, todo aparece en una sola línea.
+ - Los métodos devuelven un string con el resultado, pero quizás deberían devolver alguna estructura y dejar la presentación para otro que tenga esa responsabilidad.
 
 ### Instalación
 
