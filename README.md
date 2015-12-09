@@ -8,16 +8,37 @@ Este código es una readaptación del que mostré para completar el reto que nos
 
 El post original con la información lo tenéis en [el blog de la Codemotion](http://blog.codemotion.es/aceptas-el-reto-de-ibm/)
 
-### Objetivos
+### Objetivo: aprender
 
+Realmente el reto inicial no daba para mucho, al final eran 3 ejercicios que ya había realizado en otro momento (salvo el de las ecuaciones, cuyo cálculo al final me trajo un poco de cabeza), pero he querido aprovecharlo, darle una vuelta más y aprender todo lo que pudiera por el camino.
+
+Le he dedicado bastante tiempo a este proyecto de lo que realmente merecía (Leer sobre [karma](http://karma-runner.github.io), [jasmine](http://jasmine.github.io), [testing en AngularJS](https://docs.angularjs.org/guide/unit-testing),  [Yeoman](http://yeoman.io), [Bluemix](http://www.ibm.com/cloud-computing/bluemix/), algo de [nodejs](https://nodejs.org/en/), [express](http://expressjs.com/), [bower](http://bower.io), [travis CI](https://travis-ci.org) ..). No todas las herramientas aparecen reflejadas en la implementación. Algunas las he leido con más profundidad, otras las he intentado usar sin lograr que funcionaran, pero algunas si que han tirado adelante y no estoy muy adisjusto con el resultado.
+
+##### Sobre la implementación
+
+Como debía de poder ejecutarse desde *Bluemix*, he implementado un servidor web para que sirva estáticos (*nodejs* con *express*) y he implementado toda la lógica en *AngularJS*. La parte de los cálculos la he dejado en un service que inyecto en el *controller*. La maquetación de la web la he hecho usando algo de *Bootstrap*, las dependencias las gestiono desde *npm* y *bower* y los test unitarios los ejecuto usando *Karma* y *Jasmine*.
+
+
+Algunas de las cosas que he conseguido:
+
+- He repasado conceptos en general relacionados con la programación web (un poquito de Bootstrap por aquí, algunos conceptos de javascript..)
+- He usado Karma con Jasmine para hacer test unitarios sobre Javascript
+- He practicado la refactorización del código inicial (principalmente el del controller) a través de "TDD" (lo básico, en este caso crear test, ver que fallaba, refactorizar y vuelta a empezar)
+- He conocido otra plataforma de tipo de PaaS (hasta ahora solo había tenido "experiencia" con Heroku)
+- Y sobre todo, he leido y machacado herramientas que hasta ahora solo sabía que existían, algunas las he usado y otras no, pero espero poder usarlas todas más adelante.
+
+Y hay otras cosas que se me han quedado en el tintero, para la próxima:
+
+- No he conseguido poder hacer testing sobre AngularJS, he tenido que sacar los métodos fuera del Service para poder testearlos, no creo que sea la forma más correcta.
+- He leido algo sobre los test End to End, para la próxima espero poder implementar algunos
 
 ### Sobre la implementación
 
+Algunos 
 
 
-
- - los métodos si devuelven cada resultado en cada línea, pero al mostrarse en el navegador, todo aparece en una sola línea
- - 
+ - los métodos si devuelven cada resultado en cada línea, pero al mostrarse en el navegador, todo aparece en una sola línea.
+ - Los métodos devuelven un string con con el resultado, pero quizás deberían devolver alguna estructura y dejar la presentación para otro que tenga esa responsabilidad.
 
 ### Instalación
 
@@ -117,6 +138,7 @@ Ejemplos de entrada:
 ```
 100,50,20,10,5,2,:57
 100,10,50,20,5,2, 1:36
+#
 ```
 
 

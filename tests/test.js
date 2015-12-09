@@ -2,7 +2,7 @@
 //////////////////////////// FACTORIAL ////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
-describe("El Factorial (calcularFac) ", function() {
+describe("El Factorial (calcularFac)", function() {
   // Test para datos correctos
   it("calcula de un numero", function() {
     expect(calcularFac("5\n#")).toBe('120\n');
@@ -45,7 +45,7 @@ describe("El Factorial (calcularFac) ", function() {
 ////////////////////////////// CAMBIO /////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
-describe("El método del cambio (calcularMon) ", function() {
+describe("El método del cambio (calcularMon)", function() {
   // Test para datos correctos
   it("calcula una línea", function(){
     expect(calcularMon("100,50,20,10,5,2,:57\n#")).toBe("50x1, 5x1, 2x1\n");
@@ -75,30 +75,42 @@ describe("El método del cambio (calcularMon) ", function() {
 
 });
 
+///////////////////////////////////////////////////////////////////////
+//////////////////////////// ECUACIONES ///////////////////////////////
+///////////////////////////////////////////////////////////////////////
 
-/*
-asserts
-expect(a).toBe(b);
-expect(a).not.toBe(null);
+describe("El método para calcular ecuaciones (calcularEc)", function() {
 
-Valores simples:
- expect(a).toEqual(12);
+  // Test para datos correctos
+  it("calcula dos ecuaciones con 2 incognitas", function() {
+    expect(calcularEc("4x+3y=24\n5 x + y =19\n#\n##")).toBe('x=3 y=4\n');
+    expect(calcularEc("2x+y=3\n3x-y=2\n#\n##")).toBe('x=1 y=1\n');
+  });
 
-Expresiones regularess;
- expect(message).toMatch("bar");
-expect(message).not.toMatch(/quux/);
+  it("calcula varias ecuaciones de 2 incognitas", function() {
+    expect(calcularEc("4x+3y=24\n5 x + y =19\n#\n2x+y=3\n3x-y=2\n#\n##")).toBe('x=3 y=4\nx=1 y=1\n');
+  });
 
-expect(a.foo).toBeDefined();
-expect(a.bar).not.toBeDefined();
+  // Test para errores
+  it("lanza error si lista vacia", function() {
+    expect(function(){calcularEc("")}).toThrow();
+  });
 
-expect(a).toBeNull();
+  it("lanza error si solo hay una almohadilla (vacia igualmente)", function() {
+    expect(function(){calcularEc("#")}).toThrow();
+  });
 
-expect(a).toBeFalsy();
-expect(foo).not.toBeFalsy();
+  it("lanza error si no finaliza con una almohadilla)", function() {
+    expect(function(){calcularEc("4x+3y=24\n5 x + y =19\n")}).toThrow();
+  });
 
-expect(a).toContain("bar");
-expect(a).not.toContain("quux");
+  it("lanza error si falta la almohadilla que separa las ecuaciones)", function() {
+    expect(function(){calcularEc("4x+3y=24\n5 x + y =19\n#\n2x+y=3\n3x-y=2\n##")}).toThrow();
+    expect(function(){calcularEc("4x+3y=24\n5 x + y =19\n2x+y=3\n3x-y=2\n#\n##")}).toThrow();
+  });
 
-
-
-*/
+  it("lanza error si encuentra algún valor que no es un número", function() {
+    expect(function(){calcularEc("4x+3y=24\n5 x + y =a\n#\n2x+y=3\n3x-y=2\n#\n##")}).toThrow();
+    expect(function(){calcularEc("4x+3y=24\n5 x + y =19\n#\n2x+a=3\n3x-y=2\n#\n##")}).toThrow();
+  });
+});
