@@ -1,40 +1,41 @@
-# Reto de IBM Bluemix de la Codemotion 2015
+# Reto de IBM Bluemix de la Codemotion 2015 [![Build Status](https://travis-ci.org/koletzilla/Codemotion2015_reto_Bluemix.svg)](https://travis-ci.org/koletzilla/Codemotion2015_reto_Bluemix)
 
 - - -
 
 ### Introducción
 
-Este código es una readaptación del que mostré para completar el reto que nos propusieron, entre otros cambios he pasado a usar NodeJS como servidor y he incluido varios test. Espero que cumpla con todos los requisitos que pusieron (de ahí intentar hacer los test), pero si alguien encuentra algo que falle que avise ;).
+Este código es una readaptación del que mostré para completar el reto que nos propusieron desde IBM Bluemix. Entre otros cambios he pasado a usar NodeJS como servidor y he incluido varios test. Espero que cumpla con todos los requisitos que pusieron (de ahí intentar hacer los test), pero si alguien encuentra algo que falle que avise ;).
 
-El post original con la información lo tenéis en [el blog de la Codemotion](http://blog.codemotion.es/aceptas-el-reto-de-ibm/)
+El post original con la información lo tenéis en [el blog de la Codemotion](http://blog.codemotion.es/aceptas-el-reto-de-ibm/).
 
 ### Objetivo: aprender
 
-Realmente el reto inicial no daba para mucho, al final eran 3 ejercicios que ya había realizado en otro momento (salvo el de las ecuaciones, cuyo cálculo al final me trajo un poco de cabeza), pero he querido aprovecharlo, darle una vuelta más y aprender todo lo que pudiera por el camino.
+Realmente el reto inicial no daba para mucho, al final eran 3 ejercicios que ya había realizado en otro momento (salvo el de las ecuaciones, cuyo cálculo al final me trajo un poco de cabeza, menos mal que conté con algo de ayuda :P), pero he querido aprovecharlo, darle una vuelta más y aprender todo lo que pudiera por el camino.
 
-Le he dedicado bastante tiempo a este proyecto de lo que realmente merecía (Leer sobre [karma](http://karma-runner.github.io), [jasmine](http://jasmine.github.io), [testing en AngularJS](https://docs.angularjs.org/guide/unit-testing),  [Yeoman](http://yeoman.io), [Bluemix](http://www.ibm.com/cloud-computing/bluemix/), algo de [nodejs](https://nodejs.org/en/), [express](http://expressjs.com/), [bower](http://bower.io), [travis CI](https://travis-ci.org) ..). No todas las herramientas aparecen reflejadas en la implementación. Algunas las he leido con más profundidad, otras las he intentado usar sin lograr que funcionaran, pero algunas si que han tirado adelante y no estoy muy adisjusto con el resultado.
+Le he dedicado bastante tiempo a este proyecto de lo que realmente merecía (Leer sobre [karma](http://karma-runner.github.io), [jasmine](http://jasmine.github.io), [testing en AngularJS](https://docs.angularjs.org/guide/unit-testing),  [Yeoman](http://yeoman.io), [Bluemix](http://www.ibm.com/cloud-computing/bluemix/), algo de [nodejs](https://nodejs.org/en/), [express](http://expressjs.com/), [bower](http://bower.io), [travis CI](https://travis-ci.org) ..). No todas las herramientas aparecen reflejadas en la implementación. Algunas las he leido con más profundidad, otras las he intentado usar sin lograr que funcionaran, pero con algunas si que he tirado adelante y estoy contento con el resultado.
 
 ##### Sobre la implementación
 
-Como debía de poder ejecutarse desde *Bluemix*, he implementado un servidor web para que sirva estáticos (*nodejs* con *express*) y he implementado toda la lógica en *AngularJS*. La parte de los cálculos la he dejado en un service que inyecto en el *controller*. La maquetación de la web la he hecho usando algo de *Bootstrap*, las dependencias las gestiono desde *npm* y *bower* y los test unitarios los ejecuto usando *Karma* y *Jasmine*.
+Como debía de poder ejecutarse desde *Bluemix*, he implementado un servidor web para que sirva estáticos (bastante simple con *nodejs* con *express*, hay ejemplos en el [Github de IBM-Bluemix](https://github.com/IBM-Bluemix/node-helloworld) ) y he implementado toda la lógica en *AngularJS*. La parte de los cálculos la he dejado en un service que inyecto en el *controller*. La maquetación de la web la he hecho usando algo de *Bootstrap*, las dependencias las gestiono desde *npm* y *bower* y los test unitarios/de integración los ejecuto usando *Karma* y *Jasmine*.
 
 
-Algunas de las cosas que he conseguido:
+##### Algunas de las cosas que he conseguido:
 
 - He repasado conceptos en general relacionados con la programación web (un poquito de Bootstrap por aquí, algunos conceptos de javascript..)
-- He usado Karma con Jasmine para hacer test unitarios sobre Javascript
-- He practicado la refactorización del código inicial (principalmente el del controller) a través de "TDD" (lo básico, en este caso crear test, ver que fallaba, refactorizar y vuelta a empezar)
-- He conocido otra plataforma de tipo de PaaS (hasta ahora solo había tenido "experiencia" con Heroku)
+- He usado Karma con Jasmine para hacer test unitarios/de integración sobre Javascript.
+- He practicado la refactorización del código inicial (principalmente el del controller) a través de "TDD" (lo básico, en este caso crear test, ver que fallaba, refactorizar y vuelta a empezar).
+- He conocido otra plataforma de tipo de PaaS (hasta ahora solo había tenido "experiencia" con Heroku).
 - Y sobre todo, he leido y machacado herramientas que hasta ahora solo sabía que existían, algunas las he usado y otras no, pero espero poder usarlas todas más adelante.
 
-Y hay otras cosas que se me han quedado en el tintero, para la próxima:
+#####  Cosas que se me han quedado en el tintero, para la próxima:
 
 - No he conseguido poder hacer testing sobre AngularJS, he tenido que sacar los métodos fuera del Service para poder testearlos, no creo que sea la forma más correcta.
-- He leido algo sobre los test End to End, para la próxima espero poder implementar algunos
+- He leido algo sobre los test End to End, para la próxima espero poder implementar algunos.
+- He tenido problemas para poder configurar bien [generator-angular](https://github.com/yeoman/generator-angular), sospecho que algo a tenido que ver con que en un principio estaba usando la versión 5.1.1 de *NodeJS* y que alguna dependecia no lo soportaba (como *Karma* por ejemplo, que en la versión que uso lo máximo que soporta es la 4.X de *node*).
+- No he acabado muy contento con la refactorización de los métodos. El control de errores y sacar los datos de los strings han añadido más líneas de lo que me esperaba.
 
-### Sobre la implementación
+##### "Errores" en la implementación
 
-Algunos 
 
 
  - los métodos si devuelven cada resultado en cada línea, pero al mostrarse en el navegador, todo aparece en una sola línea.
@@ -44,12 +45,11 @@ Algunos
 
 ###### En local
 
-Requisitos:
- - Nodejs 4.2.3 (Probablemente compatible con 4.X, no compatible con ~5.1.1)
+++Requisitos:++
+ - Nodejs 4.2.3 (Probablemente compatible con 4.X pero no compatible con ~5.1.1)
  - Npm correspondiente
- - Resto de dependencias definidas en package.json y bower.json (instaladas ambas con npm install)
 
-Para instalar las dependencias, ejecutar:
+Para instalar las dependencias (*npm* y *bower*), ejecutar:
 
 `npm install`
 
@@ -65,7 +65,7 @@ Para ejecutar las pruebas
 
 Con añadir el remote de la app creada y hacer un push a sus servidores, la instalación y la ejecución se realiza automáticamente.
 
-### Resumen de las normas
+## Resumen de las normas del reto
 
 - El software debe correr en el PaaS de Bluemix
 - Se puede usar cualquier lenguaje de programación que permita Bluemix
